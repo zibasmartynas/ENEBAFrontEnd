@@ -10,7 +10,7 @@ function App() {
   const [products, setProducts] = useState([]);
 
   useEffect(()=>{
-    fetch(`http://localhost:3001/list?search=${encodeURIComponent(search)}`)
+    fetch(`https://enebabackend.onrender.com//list?search=${encodeURIComponent(search)}`)
     .then(res => res.json())
     .then(data => setProducts(data)) //console.log("Fetched ", data)})
     .catch(err=>console.error("Error fetching products: ", err));
