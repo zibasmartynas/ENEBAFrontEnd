@@ -1,3 +1,3 @@
 App running:
-npm install
+npm install & 
 npm start
