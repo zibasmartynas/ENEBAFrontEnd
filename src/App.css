@@ -1,0 +1,138 @@
+/*.App {
+  background-color: #4518ac;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.search-bar-container{
+  padding-top: 2vh;
+  width: 40%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 200px;
+}*/
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background-color: #4518ac;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+.search-bar-container {
+  padding-top: 2vh;
+  width: 77.5%;
+  margin: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  justify-content: left;
+  padding-left: 400px;
+}
+
+.search-logo{
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+}
+
+.body{
+  padding-top: 50px;
+}
+
+.floating-button{
+  position: fixed;
+  padding: 10px 5px;
+  bottom: 0px;
+  right: 0px;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.flagCircle{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.flag-icon{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.searchText{
+  color: white;
+}
+
+.searchTextIcons{
+  display: flex;
+  align-items: center;
+  gap: 200px;
+  color:white;
+  white-space: nowrap;
+}
+
+.searchTextIcons p{
+  display: flex;
+  align-items: center;
+  margin:0;
+  font-size: 14px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.languageText{
+  margin:0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.iconGroup{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profileIcon{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.profile-icon{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.iconsGap{
+  padding-left: 10px;
+}
