@@ -1,4 +1,5 @@
 .items-count{
     color: white;
-    padding-left: 400px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
