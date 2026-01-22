@@ -41,7 +41,6 @@ html, body, #root {
   gap: 20px;
   align-items: center;
   justify-content: left;
-  padding-left: 400px;
 }
 
 .search-logo{
