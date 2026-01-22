@@ -89,7 +89,8 @@ html, body, #root {
 .searchTextIcons{
   display: flex;
   align-items: center;
-  gap: 200px;
+  justify-content: space-between;
+  gap: 40px;
   color:white;
   white-space: nowrap;
 }
