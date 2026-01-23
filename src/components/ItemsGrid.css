@@ -2,7 +2,7 @@
   box-sizing: border-box;
   display: grid;
   /*grid-template-columns: repeat(4, 1fr);*/
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 20rem));
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 18rem));
   max-width: 1300px;
   margin: 0 auto;
   row-gap: 10px;
