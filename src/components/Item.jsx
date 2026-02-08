@@ -33,7 +33,7 @@ export const Item = () => {
     <div style={{ padding: "20px" }}>
       <h1>{item.item_name}</h1>
       <img src={item.item_image} alt={item.item_name} style={{ maxWidth: "300px" }} />
-      <p>Console: {item.item_console}</p>
+      <p>Console: {item.item_comsole}</p>
       <p>Region: {item.item_region}</p>
       <p>Price: €{item.item_price.toFixed(2)}</p>
       {item.item_sale === 1 && (
