@@ -43,8 +43,8 @@ export const ItemsGrid = ({ products })=>{
     <div className="grid">
         {products.map((p) => (
         <Link
-          to={`/product/${p.id}`}
-          key={p.id}
+          to={`/product/${p.item_id}`}
+          key={p.item_id}
           className="grid-item-link"
         >
 
