@@ -137,3 +137,8 @@
   height: 400px;
 }
 }*/
+
+.grid-item-link{
+  text-decoration: none; /* remove underline */
+  color: inherit;        /* inherit text color */
+}
