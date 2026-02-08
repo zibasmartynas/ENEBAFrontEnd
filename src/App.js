@@ -4,6 +4,8 @@ import { ItemsGrid } from './components/ItemsGrid';
 import { ItemsCount } from './components/ItemsCount';
 import { useState, useEffect } from 'react';
 import { FiHeart, FiShoppingCart } from "react-icons/fi";
+import { Routes, Route } from "react-router-dom";
+import { Item } from "./components/Item";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -50,14 +52,32 @@ function App() {
         </div>
       </div>
       
-      <div className='body'>
+      {/*<div className='body'>
         <ItemsCount products={products}></ItemsCount>
         <div className='items-container'>
           <ItemsGrid products={products}></ItemsGrid>
         </div>
 
-      </div>
+      </div>*/}
       
+      {/* ROUTES */}
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div className="body">
+              <ItemsCount products={products} />
+              <div className="items-container">
+                <ItemsGrid products={products} />
+              </div>
+            </div>
+          }
+        />
+
+        <Route path="/product/:id" element={<Item />} />
+      </Routes>
+
+
     </div>
   );
 }
