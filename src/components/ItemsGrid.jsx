@@ -2,6 +2,7 @@ import "./ItemsGrid.css";
 //import React, {useState, useEffect} from "react";
 import { FiHeart } from "react-icons/fi";
 import React from "react";
+import { Link } from "react-router-dom";
 
 /*export const ItemsGrid = () => {
     const [products, setProducts] = useState([]);
@@ -41,6 +42,13 @@ export const ItemsGrid = ({ products })=>{
     return(
     <div className="grid">
         {products.map((p) => (
+        <Link
+          to={`/product/${p.id}`}
+          key={p.id}
+          className="grid-item-link"
+        >
+
+
             <div key={p.id} className="grid-item">
                 <div className="image-wrapper">
     <img
@@ -79,6 +87,7 @@ export const ItemsGrid = ({ products })=>{
                 
                 
             </div>
+            </Link>
         ))}
     </div>
     );
