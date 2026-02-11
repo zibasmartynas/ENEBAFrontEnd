@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Button1 } from "./Button1.jsx";
+import { DropDown } from "./DropDown.jsx";
 
 export const Item = () => {
   const { id } = useParams();           // get ID from URL
@@ -41,6 +42,7 @@ export const Item = () => {
         <p>Sale Price: €{item.item_salePrice.toFixed(2)}</p>
       )}
       <p>Likes: {item.item_likes}</p>
+      <DropDown></DropDown>
       <Button1></Button1>
 
     </div>
