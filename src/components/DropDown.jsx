@@ -3,9 +3,9 @@ import "./DropDown.css";
 
 export const DropDown = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selected, setSelected] = useState("Pasirinkite savybę");
+  const [selected, setSelected] = useState("Choose");
 
-  const options = ["Su fotografo vandenženkliu", "Be fotografo vandenženklio"];
+  const options = ["Choise 1", "Choise 2"];
 
   const handleSelect = (option) => {
     setSelected(option);
