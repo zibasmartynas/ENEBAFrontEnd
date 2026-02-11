@@ -42,9 +42,11 @@ export const Item = () => {
         <p>Sale Price: €{item.item_salePrice.toFixed(2)}</p>
       )}
       <p>Likes: {item.item_likes}</p>
-      <DropDown></DropDown>
-      <Button1></Button1>
-
+      <div className="Choise-wrapper">
+        <DropDown></DropDown>
+        <Button1></Button1>
+      </div>
+      
     </div>
   );
 };
