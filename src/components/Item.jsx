@@ -33,7 +33,7 @@ export const Item = () => {
   if (!item) return <p>No item found.</p>;
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div style={{ padding: "20px" }} className="item-containe">
       <div className="Object-wrapper">
       <h1>{item.item_name}</h1>
       <img src={item.item_image} alt={item.item_name} style={{ maxWidth: "300px" }} />
