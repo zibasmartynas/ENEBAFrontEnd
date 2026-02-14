@@ -12,7 +12,10 @@
 
 /* Right side */
 .Choise-wrapper {
-    padding-top: 20%;
-  width: 300px;           /* fixed width sidebar */
-  row-gap: 10px;
+  align-items: center;
+  width: 300px; /* fixed width sidebar */
+
+  display: flex;
+  flex-direction: column;   /* stack vertically */
+  gap: 20px;
 }
