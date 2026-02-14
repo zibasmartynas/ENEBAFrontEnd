@@ -12,5 +12,6 @@
 
 /* Right side */
 .Choise-wrapper {
+    padding-top: 20%;
   width: 300px;           /* fixed width sidebar */
 }
