@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Button1 } from "./Button1.jsx";
 import { DropDown } from "./DropDown.jsx";
+import "./Item.css";
 
 export const Item = () => {
   const { id } = useParams();           // get ID from URL
@@ -33,6 +34,7 @@ export const Item = () => {
 
   return (
     <div style={{ padding: "20px" }}>
+      <div className="Object-wrapper">
       <h1>{item.item_name}</h1>
       <img src={item.item_image} alt={item.item_name} style={{ maxWidth: "300px" }} />
       <p>Console: {item.item_comsole}</p>
@@ -42,6 +44,7 @@ export const Item = () => {
         <p>Sale Price: €{item.item_salePrice.toFixed(2)}</p>
       )}
       <p>Likes: {item.item_likes}</p>
+      </div>
       <div className="Choise-wrapper">
         <DropDown></DropDown>
         <Button1></Button1>
