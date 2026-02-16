@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { DropDownRallies } from "./DropDownRallies";
 
 export const Creator = () => {
   const [files, setFiles] = useState([]);
@@ -105,6 +106,8 @@ export const Creator = () => {
           );
         })}
       </div>
+
+      <DropDownRallies></DropDownRallies>
 
       <button onClick={handleUpload}>Upload</button>
     </div>
