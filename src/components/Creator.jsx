@@ -2,19 +2,18 @@ import { useState } from "react";
 
 export const Creator = () => {
   const [files, setFiles] = useState([]);
-  const [previewUrls, setPreviewUrls] = useState([]);
 
   const handleFileChange = (e) => {
     const selectedFiles = Array.from(e.target.files);
 
-    setFiles(selectedFiles);
+    // Merge with existing files (optional)
+    setFiles((prevFiles) => [...prevFiles, ...selectedFiles]);
+  };
 
-    // Create preview URLs
-    const previews = selectedFiles.map((file) =>
-      URL.createObjectURL(file)
+  const handleRemove = (indexToRemove) => {
+    setFiles((prevFiles) =>
+      prevFiles.filter((_, index) => index !== indexToRemove)
     );
-
-    setPreviewUrls(previews);
   };
 
   const handleUpload = async () => {
@@ -38,6 +37,7 @@ export const Creator = () => {
       const data = await response.json();
       console.log("Upload success:", data);
       alert("Upload successful!");
+      setFiles([]); // clear after upload
     } catch (error) {
       console.error("Upload failed:", error);
       alert("Upload failed");
@@ -56,34 +56,53 @@ export const Creator = () => {
       />
 
       <div className="preview-container">
-        {previewUrls.map((url, index) => {
-          const file = files[index];
+        {files.map((file, index) => {
+          const previewUrl = URL.createObjectURL(file);
 
-          if (file.type.startsWith("image")) {
-            return (
-              <img
-                key={index}
-                src={url}
-                alt="preview"
-                width="200"
-                style={{ margin: "10px" }}
-              />
-            );
-          }
+          return (
+            <div
+              key={index}
+              style={{
+                position: "relative",
+                display: "inline-block",
+                margin: "10px",
+              }}
+            >
+              {/* Remove Button */}
+              <button
+                onClick={() => handleRemove(index)}
+                style={{
+                  position: "absolute",
+                  top: 5,
+                  right: 5,
+                  background: "red",
+                  color: "white",
+                  border: "none",
+                  borderRadius: "50%",
+                  width: "25px",
+                  height: "25px",
+                  cursor: "pointer",
+                }}
+              >
+                ✕
+              </button>
 
-          if (file.type.startsWith("video")) {
-            return (
-              <video
-                key={index}
-                src={url}
-                controls
-                width="250"
-                style={{ margin: "10px" }}
-              />
-            );
-          }
-
-          return null;
+              {/* Preview */}
+              {file.type.startsWith("image") ? (
+                <img
+                  src={previewUrl}
+                  alt="preview"
+                  width="200"
+                />
+              ) : (
+                <video
+                  src={previewUrl}
+                  controls
+                  width="250"
+                />
+              )}
+            </div>
+          );
         })}
       </div>
 
