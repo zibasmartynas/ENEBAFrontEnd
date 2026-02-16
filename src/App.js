@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { FiHeart, FiShoppingCart } from "react-icons/fi";
 import { Routes, Route } from "react-router-dom";
 import { Item } from "./components/Item";
+import { Creator } from './components/Creator';
 
 function App() {
   const [search, setSearch] = useState("");
@@ -37,9 +38,15 @@ function App() {
                 <div className='iconGroup'>
                   <FiHeart size={25} color='white'></FiHeart>
                   <FiShoppingCart size={25} color='white'></FiShoppingCart>
-                  <div className='profileIcon'>
+                  <Routes>
+                    <Route path="/" element={
+                    <div className='profileIcon'>
                     <img src='https://static.vecteezy.com/system/resources/previews/036/280/651/non_2x/default-avatar-profile-icon-social-media-user-image-gray-avatar-icon-blank-profile-silhouette-illustration-vector.jpg' alt="profile" className='profile-icon'/>
-                  </div>
+                  </div>}/>
+
+                  <Route path='/creator' element={<Creator/>}/>
+                  </Routes>
+                  
                 </div>
                   
             
