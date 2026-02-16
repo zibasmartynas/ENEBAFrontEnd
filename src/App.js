@@ -7,7 +7,7 @@ import { FiHeart, FiShoppingCart } from "react-icons/fi";
 import { Routes, Route, Link } from "react-router-dom";
 import { Item } from "./components/Item";
 import { Creator } from './components/Creator';
-import {AdminPage} from './components/Admin';
+import {Admin} from './components/Admin';
 
 function App() {
   const [search, setSearch] = useState("");
@@ -95,7 +95,7 @@ function App() {
           }
         />
 
-        <Route path="/admin" element={<AdminPage/>} />
+        <Route path="/admin" element={<Admin/>} />
         <Route path="/creator" element={<Creator />} />
         <Route path="/product/:id" element={<Item />} />
       </Routes>
