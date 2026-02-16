@@ -11,7 +11,7 @@ export const DropDownRallies = () => {
       .then((res) => res.json())
       .then((data) => {
         // assuming data is an array of strings like ["Choice 1", "Choice 2"]
-        setOptions(data);
+        setOptions(data.map(item => item.rally_name));
       })
       .catch((err) => console.error("Error fetching rallies:", err));
   }, []);
