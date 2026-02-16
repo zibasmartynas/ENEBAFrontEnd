@@ -4,7 +4,7 @@ import { ItemsGrid } from './components/ItemsGrid';
 import { ItemsCount } from './components/ItemsCount';
 import { useState, useEffect } from 'react';
 import { FiHeart, FiShoppingCart } from "react-icons/fi";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import { Item } from "./components/Item";
 import { Creator } from './components/Creator';
 
@@ -38,14 +38,11 @@ function App() {
                 <div className='iconGroup'>
                   <FiHeart size={25} color='white'></FiHeart>
                   <FiShoppingCart size={25} color='white'></FiShoppingCart>
-                  <Routes>
-                    <Route path="/" element={
-                    <div className='profileIcon'>
+                  <Link to='/creator'>
+                  <div className='profileIcon'>
                     <img src='https://static.vecteezy.com/system/resources/previews/036/280/651/non_2x/default-avatar-profile-icon-social-media-user-image-gray-avatar-icon-blank-profile-silhouette-illustration-vector.jpg' alt="profile" className='profile-icon'/>
-                  </div>}/>
-
-                  <Route path='/creator' element={<Creator/>}/>
-                  </Routes>
+                  </div>
+                  </Link>
                   
                 </div>
                   
@@ -81,6 +78,7 @@ function App() {
           }
         />
 
+        <Route path="/creator" element={<Creator />} />
         <Route path="/product/:id" element={<Item />} />
       </Routes>
 
