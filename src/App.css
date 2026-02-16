@@ -140,3 +140,28 @@ html, body, #root {
 .iconsGap{
   padding-left: 10px;
 }
+
+.dropdown-menu {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: white;
+  width: 150px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.dropdown-item {
+  padding: 10px 15px;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+.dropdown-item:hover {
+  background: #f0f0f0;
+}

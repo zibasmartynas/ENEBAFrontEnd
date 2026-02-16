@@ -11,6 +11,11 @@ import { Creator } from './components/Creator';
 function App() {
   const [search, setSearch] = useState("");
   const [products, setProducts] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(prev => !prev);
+  };
 
   useEffect(()=>{
     fetch(`https://enebabackend.onrender.com/list?search=${encodeURIComponent(search)}`)
@@ -38,12 +43,23 @@ function App() {
                 <div className='iconGroup'>
                   <FiHeart size={25} color='white'></FiHeart>
                   <FiShoppingCart size={25} color='white'></FiShoppingCart>
-                  <Link to='/creator'>
-                  <div className='profileIcon'>
+                  <div>
+                  <div className='profileIcon' onClick={toggleMenu}>
                     <img src='https://static.vecteezy.com/system/resources/previews/036/280/651/non_2x/default-avatar-profile-icon-social-media-user-image-gray-avatar-icon-blank-profile-silhouette-illustration-vector.jpg' alt="profile" className='profile-icon'/>
                   </div>
-                  </Link>
-                  
+
+                   {isOpen && (
+    <div className="dropdown-menu">
+      <Link to="/creator" className="dropdown-item" onClick={() => setIsOpen(false)}>
+        Creator Page
+      </Link>
+
+      <Link to="/admin" className="dropdown-item" onClick={() => setIsOpen(false)}>
+        Admin Page
+      </Link>
+    </div>
+  )}
+                  </div>
                 </div>
                   
             
